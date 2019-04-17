@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1f985f71-dc8b-4bb2-a7ea-b7ec6f7eaff9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-iview-admin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/hashing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/_iview@3.4.0@iview/src/styles/common/iconionicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/_iview@3.4.0@iview/src/styles/common/iconionicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/_iview@3.4.0@iview/src/styles/common/iconionicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/_iview@3.4.0@iview/src/styles/common/iconionicons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/error-401.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/error-404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/error-500.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/login-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/qq-group1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/qq-group2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/403.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/500.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/503.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/api/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/api/routers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/api/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/icons/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/icons/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/icons/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/icons/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/icons/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/error-page/error-401.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/error-page/error-404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/error-page/error-500.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/groups.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/login-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/logo-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/qq-group1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/qq-group2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/images/talkingdata.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/charts/bar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/charts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/charts/pie.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/charts/theme.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/common-icon/common-icon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/common-icon/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/common/common.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/common/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/count-to/count-to.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/count-to/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/count-to/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/cropper/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/cropper/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/cropper/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/drag-drawer/drag-drawer-trigger.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/drag-drawer/drag-drawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/drag-drawer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/drag-drawer/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/drag-drawer/mixin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/drag-list/drag-list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/drag-list/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/editor/editor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/editor/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/icons/icons.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/icons/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/info-card/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/info-card/infor-card.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/login-form/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/login-form/login-form.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/a-back-top/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/a-back-top/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/error-store/error-store.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/error-store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/fullscreen/fullscreen.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/fullscreen/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/custom-bread-crumb/custom-bread-crumb.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/custom-bread-crumb/custom-bread-crumb.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/custom-bread-crumb/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/header-bar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/header-bar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/sider-trigger/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/sider-trigger/sider-trigger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/header-bar/sider-trigger/sider-trigger.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/language/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/language/language.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/side-menu/collapsed-menu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/side-menu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/side-menu/item-mixin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/side-menu/mixin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/side-menu/side-menu-item.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/side-menu/side-menu.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/side-menu/side-menu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/tags-nav/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/tags-nav/tags-nav.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/tags-nav/tags-nav.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/user/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/user/user.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/components/user/user.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/main.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/main/main.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/markdown/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/markdown/markdown.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parent-view/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parent-view/parent-view.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/paste-editor/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/paste-editor/paste-editor.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/paste-editor/paste-editor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/paste-editor/plugins/placeholder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/split-pane/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/split-pane/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/split-pane/split.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/split-pane/trigger.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tables/edit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tables/handle-btns.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tables/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tables/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tables/tables.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tree-select/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tree-select/tree-select-tree.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tree-select/tree-select.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/directive/directives.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/directive/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/directive/module/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/directive/module/draggable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/libs/api.request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/libs/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/libs/excel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/libs/render-dom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/libs/tools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/libs/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/locale/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/locale/lang/en-US.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/locale/lang/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/locale/lang/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mock/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mock/data/org-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mock/data/tree-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mock/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mock/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mock/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/plugin/error-store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/plugin/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/router/before-close.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/router/routers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/module/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/module/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/argu-page/params.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/argu-page/query.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/count-to/count-to.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/cropper/cropper.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/drag-drawer/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/drag-list/drag-list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/editor/editor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/icons/icons.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/markdown/markdown.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/org-tree/components/org-view.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/org-tree/components/zoom-controller.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/org-tree/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/org-tree/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/split-pane/split-pane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/tables/tables.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/tree-select/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/components/tree-table/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/directive/directive.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/error-page/401.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/error-page/404.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/error-page/500.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/error-page/back-btn-group.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/error-page/error-content.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/error-page/error.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/error-store/error-store.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/excel/common.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/excel/export-excel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/excel/upload-excel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/i18n/i18n-page.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/join-page.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/login/login.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/login/login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/multilevel/level-2-1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/multilevel/level-2-2/level-2-2-1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/multilevel/level-2-2/level-2-2-2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/multilevel/level-2-3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/single-page/error-logger.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/single-page/home/example.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/single-page/home/home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/single-page/home/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/single-page/message/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/tools-methods/tools-methods.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/update/update-paste.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/view/update/update-table.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/channels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/console.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/testing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/CreatesApplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/router/routers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="125" selection-start-line="125" selection-end-line="125" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-648">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/libs/axios.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/directive/module/clipboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-140">
+              <caret column="32" selection-start-column="32" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="619">
+              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.lock">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>popper</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/js/libs/axios.js" />
+        <option value="$PROJECT_DIR$/resources/js/directive/module/clipboard.js" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/js/router/routers.js" />
+        <option value="$PROJECT_DIR$/readme.md" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/laravel/slack-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/laravel/nexmo-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="130" />
+    <option name="width" value="1440" />
+    <option name="height" value="780" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="laravel-iview-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-iview-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\www\laravel-iview-admin\resources\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f985f71-dc8b-4bb2-a7ea-b7ec6f7eaff9" name="Default Changelist" comment="" />
+      <created>1555490424444</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555490424444</updated>
+      <workItem from="1555490425639" duration="284000" />
+      <workItem from="1555491256422" duration="1629000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1913000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-32000" y="-32000" width="1821" height="1047" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26890278" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/libs/axios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/directive/module/clipboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/iview-admin/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="50" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/router/routers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
