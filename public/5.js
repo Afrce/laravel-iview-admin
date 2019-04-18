@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     userNameRules: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [{
           required: true,
           message: '账号不能为空',
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     passwordRules: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [{
           required: true,
           message: '密码不能为空',

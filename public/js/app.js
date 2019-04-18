@@ -1960,11 +1960,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     color: {
       type: String,
-      default: '#5c6b77'
+      "default": '#5c6b77'
     },
     size: {
       type: Number,
-      default: 16
+      "default": 16
     }
   },
   computed: {
@@ -2009,23 +2009,23 @@ var prefixCls = 'ivu-back-top';
   props: {
     height: {
       type: Number,
-      default: 400
+      "default": 400
     },
     bottom: {
       type: Number,
-      default: 30
+      "default": 30
     },
     right: {
       type: Number,
-      default: 30
+      "default": 30
     },
     duration: {
       type: Number,
-      default: 1000
+      "default": 1000
     },
     container: {
       type: null,
-      default: window
+      "default": window
     }
   },
   data: function data() {
@@ -2101,11 +2101,11 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     count: {
       type: Number,
-      default: 0
+      "default": 0
     },
     hasRead: {
       type: Boolean,
-      default: false
+      "default": false
     }
   },
   computed: {
@@ -2151,7 +2151,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     value: {
       type: Boolean,
-      default: false
+      "default": false
     }
   },
   methods: {
@@ -2249,17 +2249,17 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     list: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [];
       }
     },
     fontSize: {
       type: Number,
-      default: 14
+      "default": 14
     },
     showIcon: {
       type: Boolean,
-      default: false
+      "default": false
     }
   },
   methods: {
@@ -2343,11 +2343,11 @@ __webpack_require__.r(__webpack_exports__);
     collapsed: Boolean,
     icon: {
       type: String,
-      default: 'navicon-round'
+      "default": 'navicon-round'
     },
     size: {
       type: Number,
-      default: 26
+      "default": 26
     }
   },
   methods: {
@@ -2452,11 +2452,11 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     hideTitle: {
       type: Boolean,
-      default: false
+      "default": false
     },
     rootIconSize: {
       type: Number,
-      default: 16
+      "default": 16
     }
   },
   data: function data() {
@@ -2573,7 +2573,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     menuList: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [];
       }
     },
@@ -2582,24 +2582,24 @@ __webpack_require__.r(__webpack_exports__);
     },
     theme: {
       type: String,
-      default: 'dark'
+      "default": 'dark'
     },
     rootIconSize: {
       type: Number,
-      default: 20
+      "default": 20
     },
     iconSize: {
       type: Number,
-      default: 16
+      "default": 16
     },
     accordion: Boolean,
     activeName: {
       type: String,
-      default: ''
+      "default": ''
     },
     openNames: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [];
       }
     }
@@ -2718,7 +2718,7 @@ __webpack_require__.r(__webpack_exports__);
     value: Object,
     list: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [];
       }
     }
@@ -2937,11 +2937,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   props: {
     userAvator: {
       type: String,
-      default: ''
+      "default": ''
     },
     messageUnreadCount: {
       type: Number,
-      default: 0
+      "default": 0
     }
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['handleLogOut']), {
@@ -65699,9 +65699,9 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ "./node_modules/_vue-router@3.0.5@vue-router/dist/vue-router.esm.js":
+/***/ "./node_modules/_vue-router@3.0.6@vue-router/dist/vue-router.esm.js":
 /*!**************************************************************************!*\
-  !*** ./node_modules/_vue-router@3.0.5@vue-router/dist/vue-router.esm.js ***!
+  !*** ./node_modules/_vue-router@3.0.6@vue-router/dist/vue-router.esm.js ***!
   \**************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -65709,7 +65709,7 @@ function normalizeComponent (
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.0.5
+  * vue-router v3.0.6
   * (c) 2019 Evan You
   * @license MIT
   */
@@ -67480,7 +67480,7 @@ function resolveAsyncComponents (matched) {
           match.components[key] = resolvedDef;
           pending--;
           if (pending <= 0) {
-            next(to);
+            next();
           }
         });
 
@@ -68372,7 +68372,7 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.0.5';
+VueRouter.version = '3.0.6';
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter);
@@ -82795,7 +82795,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     parentItem: {
       type: Object,
-      default: function _default() {}
+      "default": function _default() {}
     },
     theme: String,
     iconSize: Number
@@ -83462,9 +83462,9 @@ __webpack_require__.r(__webpack_exports__);
    */
   plugin: {
     'error-store': {
-      showInHeader: true,
+      showInHeader: false,
       // 设为false后不会在顶部显示错误日志徽标
-      developmentOff: true // 设为true后在开发环境不会收集错误信息，方便开发中排查错误
+      developmentOff: false // 设为true后在开发环境不会收集错误信息，方便开发中排查错误
 
     }
   }
@@ -85224,7 +85224,7 @@ var plugin = _config__WEBPACK_IMPORTED_MODULE_0__["default"].plugin;
 /* harmony default export */ __webpack_exports__["default"] = (function (Vue) {
   for (var name in plugin) {
     var value = plugin[name];
-    Vue.use(__webpack_require__("./resources/js/plugin sync recursive ^\\.\\/.*$")("./".concat(name)).default, _typeof(value) === 'object' ? value : undefined);
+    Vue.use(__webpack_require__("./resources/js/plugin sync recursive ^\\.\\/.*$")("./".concat(name))["default"], _typeof(value) === 'object' ? value : undefined);
   }
 });
 
@@ -85270,7 +85270,7 @@ var beforeClose = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/_vue@2.6.10@vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/_vue-router@3.0.5@vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/_vue-router@3.0.6@vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routers */ "./resources/js/router/routers.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/store */ "./resources/js/store/index.js");
 /* harmony import */ var iview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! iview */ "./node_modules/_iview@3.4.0@iview/dist/iview.js");
@@ -85326,7 +85326,7 @@ router.beforeEach(function (to, from, next) {
       _store__WEBPACK_IMPORTED_MODULE_3__["default"].dispatch('getUserInfo').then(function (user) {
         // 拉取用户信息，通过用户权限和跳转的页面的name来判断是否有权限访问;access必须是一个数组，如：['super_admin'] ['super_admin', 'admin']
         turnTo(to, user.access, next);
-      }).catch(function () {
+      })["catch"](function () {
         Object(_libs_util__WEBPACK_IMPORTED_MODULE_5__["setToken"])('');
         next({
           name: 'login'
@@ -85388,15 +85388,10 @@ __webpack_require__.r(__webpack_exports__);
   name: '_home',
   redirect: '/home',
   component: _components_main__WEBPACK_IMPORTED_MODULE_0__["default"],
-  meta: {
-    hideInMenu: true,
-    notCache: true
-  },
   children: [{
     path: '/home',
     name: 'home',
     meta: {
-      hideInMenu: true,
       title: '首页',
       notCache: true,
       icon: 'md-home'
@@ -85406,30 +85401,56 @@ __webpack_require__.r(__webpack_exports__);
     }
   }]
 }, {
-  path: '',
-  name: 'doc',
+  path: '/multilevel',
+  name: 'multilevel',
+  // 一级目录
   meta: {
-    title: '文档',
-    href: 'https://lison16.github.io/iview-admin-doc/#/',
-    icon: 'ios-book'
-  }
-}, {
-  path: '/join',
-  name: 'join',
-  component: _components_main__WEBPACK_IMPORTED_MODULE_0__["default"],
-  meta: {
-    hideInBread: true
+    icon: 'arrow-graph-up-right',
+    title: '多级菜单'
   },
+  component: _components_main__WEBPACK_IMPORTED_MODULE_0__["default"],
+  // 一级目录必须使用Main组件作为component
   children: [{
-    path: 'join_page',
-    name: 'join_page',
+    path: 'level_2_1',
+    name: 'level_2_1',
+    // 一级目录下的二级页面
     meta: {
-      icon: '_qq',
-      title: 'QQ群'
+      icon: 'arrow-graph-up-right',
+      title: '二级-1'
     },
     component: function component(resolve) {
-      __webpack_require__.e(/*! AMD require */ 6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! @/view/join-page.vue */ "./resources/js/view/join-page.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+      __webpack_require__.e(/*! AMD require */ 5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! @/view/login/login.vue */ "./resources/js/view/login/login.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
     }
+  }, {
+    path: 'level_2_2',
+    name: 'level_2_2',
+    meta: {
+      icon: 'arrow-graph-up-right',
+      title: '二级-2'
+    },
+    component: _components_parent_view__WEBPACK_IMPORTED_MODULE_1__["default"],
+    // 如果该路由不是页面，而是二级即更多级目录，需要用parentView组件
+    children: [{
+      path: 'level_2_2_1',
+      name: 'level_2_2_1',
+      meta: {
+        icon: 'arrow-graph-up-right',
+        title: '三级'
+      },
+      component: function component(resolve) {
+        __webpack_require__.e(/*! AMD require */ 5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! @/view/login/login.vue */ "./resources/js/view/login/login.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+      }
+    }, {
+      path: 'level_2_2_2',
+      name: 'level_2_2_2',
+      meta: {
+        icon: 'arrow-graph-up-right',
+        title: '三级-1'
+      },
+      component: function component(resolve) {
+        __webpack_require__.e(/*! AMD require */ 5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! @/view/login/login.vue */ "./resources/js/view/login/login.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+      }
+    }]
   }]
 }, {
   path: '/message',
@@ -85762,7 +85783,7 @@ __webpack_require__.r(__webpack_exports__);
           var data = res.data;
           commit('setToken', data.token);
           resolve();
-        }).catch(function (err) {
+        })["catch"](function (err) {
           reject(err);
         });
       });
@@ -85776,7 +85797,7 @@ __webpack_require__.r(__webpack_exports__);
           commit('setToken', '');
           commit('setAccess', []);
           resolve();
-        }).catch(function (err) {
+        })["catch"](function (err) {
           reject(err);
         }); // 如果你的退出登录无需请求接口，则可以直接使用下面三行代码而无需使用logout调用接口
         // commit('setToken', '')
@@ -85798,7 +85819,7 @@ __webpack_require__.r(__webpack_exports__);
             commit('setAccess', data.access);
             commit('setHasGetInfo', true);
             resolve(data);
-          }).catch(function (err) {
+          })["catch"](function (err) {
             reject(err);
           });
         } catch (error) {
@@ -85841,7 +85862,7 @@ __webpack_require__.r(__webpack_exports__);
             return new Date(b.create_time) - new Date(a.create_time);
           }));
           resolve();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           reject(error);
         });
       });
@@ -85882,7 +85903,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           commit('setMessageCount', state.unreadCount - 1);
           resolve();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           reject(error);
         });
       });
@@ -85899,7 +85920,7 @@ __webpack_require__.r(__webpack_exports__);
             msg_id: msg_id
           });
           resolve();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           reject(error);
         });
       });
@@ -85916,7 +85937,7 @@ __webpack_require__.r(__webpack_exports__);
             msg_id: msg_id
           });
           resolve();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           reject(error);
         });
       });

@@ -131,7 +131,7 @@ var listDic = {
         });
 
         _this.stopLoading('contentLoading');
-      }).catch(function () {
+      })["catch"](function () {
         _this.stopLoading('contentLoading');
       });
     },
@@ -152,7 +152,7 @@ var listDic = {
 
     this.getMessageList().then(function () {
       return _this2.stopLoading('listLoading');
-    }).catch(function () {
+    })["catch"](function () {
       return _this2.stopLoading('listLoading');
     });
   }

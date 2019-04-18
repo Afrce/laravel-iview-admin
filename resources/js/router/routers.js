@@ -32,16 +32,11 @@ export default [
     name: '_home',
     redirect: '/home',
     component: Main,
-    meta: {
-      hideInMenu: true,
-      notCache: true
-    },
     children: [
       {
         path: '/home',
         name: 'home',
         meta: {
-          hideInMenu: true,
           title: '首页',
           notCache: true,
           icon: 'md-home'
@@ -49,32 +44,52 @@ export default [
         component: resolve => { require(['@/view/single-page/home'], resolve); }
       }
     ]
-  },
-  {
-    path: '',
-    name: 'doc',
+  },{
+    path: '/multilevel',
+    name: 'multilevel', // 一级目录
     meta: {
-      title: '文档',
-      href: 'https://lison16.github.io/iview-admin-doc/#/',
-      icon: 'ios-book'
-    }
-  },
-  {
-    path: '/join',
-    name: 'join',
-    component: Main,
-    meta: {
-      hideInBread: true
+      icon: 'arrow-graph-up-right',
+      title: '多级菜单'
     },
+    component: Main, // 一级目录必须使用Main组件作为component
     children: [
       {
-        path: 'join_page',
-        name: 'join_page',
+        path: 'level_2_1',
+        name: 'level_2_1', // 一级目录下的二级页面
         meta: {
-          icon: '_qq',
-          title: 'QQ群'
+          icon: 'arrow-graph-up-right',
+          title: '二级-1'
         },
-        component: resolve => { require(['@/view/join-page.vue'], resolve); }
+        component: resolve => { require(['@/view/login/login.vue'], resolve); }
+      },
+      {
+        path: 'level_2_2',
+        name: 'level_2_2',
+        meta: {
+          icon: 'arrow-graph-up-right',
+          title: '二级-2'
+        },
+        component: parentView, // 如果该路由不是页面，而是二级即更多级目录，需要用parentView组件
+        children: [
+          {
+            path: 'level_2_2_1',
+            name: 'level_2_2_1',
+            meta: {
+              icon: 'arrow-graph-up-right',
+              title: '三级'
+            },
+            component: resolve => { require(['@/view/login/login.vue'], resolve); }
+          },
+          {
+            path: 'level_2_2_2',
+            name: 'level_2_2_2',
+            meta: {
+              icon: 'arrow-graph-up-right',
+              title: '三级-1'
+            },
+            component: resolve => { require(['@/view/login/login.vue'], resolve); }
+          }
+        ]
       }
     ]
   },

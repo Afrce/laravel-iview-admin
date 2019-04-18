@@ -195,7 +195,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     init: {
       type: Number,
-      default: 0
+      "default": 0
     },
 
     /**
@@ -203,7 +203,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     startVal: {
       type: Number,
-      default: 0
+      "default": 0
     },
 
     /**
@@ -219,7 +219,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     decimals: {
       type: Number,
-      default: 0
+      "default": 0
     },
 
     /**
@@ -227,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     decimal: {
       type: String,
-      default: '.'
+      "default": '.'
     },
 
     /**
@@ -235,7 +235,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     duration: {
       type: Number,
-      default: 2
+      "default": 2
     },
 
     /**
@@ -243,7 +243,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     delay: {
       type: Number,
-      default: 0
+      "default": 0
     },
 
     /**
@@ -251,7 +251,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     uneasing: {
       type: Boolean,
-      default: false
+      "default": false
     },
 
     /**
@@ -259,7 +259,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     usegroup: {
       type: Boolean,
-      default: false
+      "default": false
     },
 
     /**
@@ -267,7 +267,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     separator: {
       type: String,
-      default: ','
+      "default": ','
     },
 
     /**
@@ -275,7 +275,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     simplify: {
       type: Boolean,
-      default: false
+      "default": false
     },
 
     /**
@@ -284,17 +284,17 @@ __webpack_require__.r(__webpack_exports__);
      */
     unit: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [[3, 'K+'], [6, 'M+'], [9, 'B+']];
       }
     },
     countClass: {
       type: String,
-      default: ''
+      "default": ''
     },
     unitClass: {
       type: String,
-      default: ''
+      "default": ''
     }
   },
   data: function data() {
@@ -407,23 +407,23 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     left: {
       type: Number,
-      default: 36
+      "default": 36
     },
     color: {
       type: String,
-      default: '#2d8cf0'
+      "default": '#2d8cf0'
     },
     icon: {
       type: String,
-      default: ''
+      "default": ''
     },
     iconSize: {
       type: Number,
-      default: 20
+      "default": 20
     },
     shadow: {
       type: Boolean,
-      default: false
+      "default": false
     }
   },
   computed: {
