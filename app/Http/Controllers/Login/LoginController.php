@@ -74,10 +74,10 @@ class LoginController extends Controller
                     $resultData = '未知错误，请联系管理员！';
                     break;
             }
-            return ['success' => false, 'message' => $resultData];
+            return ['status' => false, 'message' => $resultData];
         }
         return [
-            'success' => true,
+            'status' => true,
             'message' => '获取成功',
             'data' => [
                 'token' => $result['access_token'],

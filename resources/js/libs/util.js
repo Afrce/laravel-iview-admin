@@ -11,7 +11,7 @@ export const setToken = (token) => {
 }
 
 export const getToken = () => {
-  const token = Cookies.get(TOKEN_KEY)
+  const token = localStorage.getItem("token")
   if (token) return token
   else return false
 }

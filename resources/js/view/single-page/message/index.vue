@@ -19,7 +19,6 @@
         <Menu
           width="auto"
           active-name=""
-          :class="titleClass"
           @on-select="handleView"
         >
           <MenuItem v-for="item in messageList" :name="item.msg_id" :key="`msg_${item.msg_id}`">
@@ -31,8 +30,8 @@
                 :style="{ display: item.loading ? 'inline-block !important' : '' }"
                 :loading="item.loading"
                 size="small"
-                :icon="currentMessageType === 'readed' ? 'md-trash' : 'md-redo'"
-                :title="currentMessageType === 'readed' ? '删除' : '还原'"
+                :icon="currentMessageType === 'readed' ? 'md-trash' : ''"
+                :title="currentMessageType === 'readed' ? '删除' :''"
                 type="text"
                 v-show="currentMessageType !== 'unread'"
                 @click.native.stop="removeMsg(item)"></Button>
@@ -53,83 +52,57 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-const listDic = {
-  unread: 'messageUnreadList',
-  readed: 'messageReadedList',
-  trash: 'messageTrashList'
-}
-export default {
+  import { getMessageList, readMsg, delMsg } from "../../../api/user/msg";
+
+  export default {
   name: 'message_page',
   data () {
     return {
-      listLoading: true,
+      listLoading: false,
       contentLoading: false,
       currentMessageType: 'unread',
       messageContent: '',
-      showingMsgItem: {}
+      messageList: [],
+      showingMsgItem: {},
+      messageUnreadCount: 0,
+      messageReadedCount: 0,
+      messageTrashCount: 0
     }
   },
   computed: {
-    ...mapState({
-      messageUnreadList: state => state.user.messageUnreadList,
-      messageReadedList: state => state.user.messageReadedList,
-      messageTrashList: state => state.user.messageTrashList,
-      messageList () {
-        return this[listDic[this.currentMessageType]]
-      },
-      titleClass () {
-        return {
-          'not-unread-list': this.currentMessageType !== 'unread'
-        }
-      }
-    }),
-    ...mapGetters([
-      'messageUnreadCount',
-      'messageReadedCount',
-      'messageTrashCount'
-    ])
   },
   methods: {
-    ...mapMutations([
-      //
-    ]),
-    ...mapActions([
-      'getContentByMsgId',
-      'getMessageList',
-      'hasRead',
-      'removeReaded',
-      'restoreTrash'
-    ]),
-    stopLoading (name) {
-      this[name] = false
-    },
     handleSelect (name) {
       this.currentMessageType = name
     },
     handleView (msg_id) {
       this.contentLoading = true
-      this.getContentByMsgId({ msg_id }).then(content => {
-        this.messageContent = content
-        const item = this.messageList.find(item => item.msg_id === msg_id)
-        if (item) this.showingMsgItem = item
-        if (this.currentMessageType === 'unread') this.hasRead({ msg_id })
-        this.stopLoading('contentLoading')
-      }).catch(() => {
-        this.stopLoading('contentLoading')
+      readMsg(msg_id).then(function (data) {
+        console.log(data)
+      }).catch(function () {
+
       })
     },
     removeMsg (item) {
       item.loading = true
       const msg_id = item.msg_id
-      if (this.currentMessageType === 'readed') this.removeReaded({ msg_id })
-      else this.restoreTrash({ msg_id })
+      if (this.currentMessageType === 'readed'){
+          delMsg(msg_id).then(function (data) {
+            console.log(data)
+          }).catch(function () {
+
+          })
+      }
     }
   },
   mounted () {
-    this.listLoading = true
+    let _this = this
+    _this.listLoading = true
     // 请求获取消息列表
-    this.getMessageList().then(() => this.stopLoading('listLoading')).catch(() => this.stopLoading('listLoading'))
+    getMessageList().then(function (data) {
+      console.log(data)
+      _this.listLoading = false
+    })
   }
 }
 </script>

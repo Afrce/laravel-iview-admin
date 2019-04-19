@@ -28,3 +28,7 @@ Route::namespace("Login")->group(function (){
     Route::post("/refresh_token","LoginController@refreshToken")->middleware("auth:api");
     Route::post('/test',"LoginController@test")->middleware('auth:api');
 });
+Route::namespace("User")->prefix("user")->middleware("auth:api")->group(function(){
+    Route::get("/getMessageList","UserController@getMessageList");
+    Route::get("/getUserInfo","UserController@getUserInfo");
+});

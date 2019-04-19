@@ -1,13 +1,13 @@
 <template>
   <div class="user-avator-dropdown">
     <Dropdown @on-click="handleClick">
-      <Badge :dot="!!messageUnreadCount">
-        <Avatar :src="userAvator"/>
+      <Badge class="allBadeg" :count="unreadMsg" overflow-count="99">
+        <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
       </Badge>
       <Icon :size="18" type="md-arrow-dropdown"></Icon>
       <DropdownMenu slot="list">
         <DropdownItem name="message">
-          消息中心<Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
+          消息中心<Badge style="margin-left: 10px" :count="unreadMsg"></Badge>
         </DropdownItem>
         <DropdownItem name="logout">退出登录</DropdownItem>
       </DropdownMenu>
@@ -17,29 +17,18 @@
 
 <script>
 import './user.less'
-import { mapActions } from 'vuex'
+import { logout } from "../../../../api/user/login";
+
 export default {
   name: 'User',
-  props: {
-    userAvator: {
-      type: String,
-      default: ''
-    },
-    messageUnreadCount: {
-      type: Number,
-      default: 0
+  data() {
+    return{
+      unreadMsg: 11
     }
   },
   methods: {
-    ...mapActions([
-      'handleLogOut'
-    ]),
     logout () {
-      this.handleLogOut().then(() => {
-        this.$router.push({
-          name: 'login'
-        })
-      })
+      logout()
     },
     message () {
       this.$router.push({
@@ -54,6 +43,10 @@ export default {
           break
       }
     }
+  },
+  mounted() {
+    let userInfo = JSON.parse(localStorage.getItem('userInfo'))
+    this.unreadMsg = userInfo.unreadMsg
   }
 }
 </script>

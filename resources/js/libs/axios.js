@@ -1,6 +1,9 @@
 import axios from "axios"
 import store from '@/store'
 // import { Spin } from 'iview'
+import {messageInfo, messageError, messageSuccess, messageWarning} from "../common/common";
+import router from '../router/index'
+import { getToken } from './util'
 const addErrorLog = errorInfo => {
   const { statusText, status, request: { responseURL } } = errorInfo
   let info = {
@@ -21,7 +24,7 @@ class HttpRequest {
     const config = {
       baseURL: this.baseUrl,
       headers: {
-        //
+        Authorization: "Bearer " + getToken()
       }
     }
     return config
@@ -52,12 +55,14 @@ class HttpRequest {
     }, error => {
       this.destroy(url)
       let errorInfo = error.response
-      if (!errorInfo) {
-        const { request: { statusText, status }, config } = JSON.parse(JSON.stringify(error))
-        errorInfo = {
-          statusText,
-          status,
-          request: { responseURL: config.url }
+      if (errorInfo) {
+        if(errorInfo.status === 401){
+          messageWarning({title:'用户未登录！'})
+          router.push({
+            path:'/login',
+          })
+        }else{
+
         }
       }
       addErrorLog(errorInfo)
