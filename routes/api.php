@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Laravel\Passport\Passport;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,9 +22,9 @@ Passport::tokensExpireIn(Carbon::now()->addDays(config('passport.tokensExpireIn'
 // 刷新后的访问令牌有效期（天）
 Passport::refreshTokensExpireIn(Carbon::now()->addDays(config('passport.refreshTokensExpireIn')));
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::namespace("Login")->group(function (){
+    Route::post("/login","LoginController@login");
+    Route::post("/logout","LoginController@logout")->middleware("auth:api");
+    Route::post("/refresh_token","LoginController@refreshToken")->middleware("auth:api");
+    Route::post('/test',"LoginController@test")->middleware('auth:api');
 });
-
-Route::post("/login","Login\LoginController@login");
-Route::post('/test',"Login\LoginController@test")->middleware('auth:api');
