@@ -37,6 +37,8 @@ export const logout = () => {
         url: '/api/logout',
         method: "POST"
     }).then(function (data) {
+        localStorage.removeItem('userInfo');
+        console.log(11);
         localStorage.removeItem("refresh_token");
         localStorage.removeItem('token');
         router.push({path:"/login"})

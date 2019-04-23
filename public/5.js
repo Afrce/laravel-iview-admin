@@ -10,6 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_user_msg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../api/user/msg */ "./resources/js/api/user/msg.js");
+/* harmony import */ var _common_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/common */ "./resources/js/common/common.js");
 //
 //
 //
@@ -63,6 +64,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'message_page',
@@ -73,32 +75,65 @@ __webpack_require__.r(__webpack_exports__);
       currentMessageType: 'unread',
       messageContent: '',
       messageList: [],
+      currentMsgList: [],
       showingMsgItem: {},
       messageUnreadCount: 0,
       messageReadedCount: 0,
-      messageTrashCount: 0
+      messageDeletedCount: 0
     };
   },
   computed: {},
   methods: {
     handleSelect: function handleSelect(name) {
+      this.messageContent = "";
       this.currentMessageType = name;
+      this.currentMsgList = this.messageList[name];
     },
-    handleView: function handleView(msg_id) {
-      this.contentLoading = true;
+    handleView: function handleView(key) {
+      var _this = this;
+
+      this.messageContent = "";
+      var currentMsg = this.currentMsgList[key];
+      this.messageContent = currentMsg['msg']['url'];
+      var msg_id = currentMsg['id'];
+
+      if (this.currentMessageType === 'unread') {
+        this.readMsg(msg_id);
+      }
+    },
+    readMsg: function readMsg(msg_id) {
       Object(_api_user_msg__WEBPACK_IMPORTED_MODULE_0__["readMsg"])(msg_id).then(function (data) {
-        console.log(data);
+        if (data.data.status) {
+          _this.getMessageList();
+        }
       })["catch"](function () {});
     },
-    removeMsg: function removeMsg(item) {
-      item.loading = true;
-      var msg_id = item.msg_id;
+    removeMsg: function removeMsg(key) {
+      var currentMsg = this.currentMsgList[key];
+      var msg_id = currentMsg['id'];
+      console.log(msg_id);
 
       if (this.currentMessageType === 'readed') {
         Object(_api_user_msg__WEBPACK_IMPORTED_MODULE_0__["delMsg"])(msg_id).then(function (data) {
-          console.log(data);
+          if (data.data.status) {
+            Object(_common_common__WEBPACK_IMPORTED_MODULE_1__["messageSuccess"])({
+              "title": "删除成功！"
+            });
+          }
         })["catch"](function () {});
       }
+    },
+    getMessageList: function getMessageList() {
+      var _this = this;
+
+      Object(_api_user_msg__WEBPACK_IMPORTED_MODULE_0__["getMessageList"])().then(function (data) {
+        _this.messageList = data.data.data;
+        _this.messageUnreadCount = _this.messageList.unread.length;
+        _this.messageReadedCount = _this.messageList.readed.length;
+        _this.messageDeletedCount = _this.messageList.deleted.length;
+        _this.currentMsgList = _this.messageList.unread;
+        _this.listLoading = false;
+      });
     }
   },
   mounted: function mounted() {
@@ -106,10 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 
     _this.listLoading = true; // 请求获取消息列表
 
-    Object(_api_user_msg__WEBPACK_IMPORTED_MODULE_0__["getMessageList"])().then(function (data) {
-      console.log(data);
-      _this.listLoading = false;
-    });
+    _this.getMessageList();
   }
 });
 
@@ -227,7 +259,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "MenuItem",
-                { attrs: { name: "trash" } },
+                { attrs: { name: "deleted" } },
                 [
                   _c("span", { staticClass: "category-title" }, [
                     _vm._v("回收站")
@@ -236,7 +268,7 @@ var render = function() {
                     staticStyle: { "margin-left": "10px" },
                     attrs: {
                       "class-name": "gray-dadge",
-                      count: _vm.messageTrashCount
+                      count: _vm.messageDeletedCount
                     }
                   })
                 ],
@@ -251,7 +283,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "message-page-con message-list-con" },
+        {
+          staticClass: "message-page-con message-list-con",
+          staticStyle: { overflow: "auto" }
+        },
         [
           _vm.listLoading
             ? _c("Spin", { attrs: { fix: "", size: "large" } })
@@ -263,58 +298,52 @@ var render = function() {
               attrs: { width: "auto", "active-name": "" },
               on: { "on-select": _vm.handleView }
             },
-            _vm._l(_vm.messageList, function(item) {
-              return _c(
-                "MenuItem",
-                { key: "msg_" + item.msg_id, attrs: { name: item.msg_id } },
-                [
-                  _c(
-                    "div",
-                    [
-                      _c("p", { staticClass: "msg-title" }, [
-                        _vm._v(_vm._s(item.title))
-                      ]),
-                      _vm._v(" "),
-                      _c("Badge", {
-                        attrs: { status: "default", text: item.create_time }
-                      }),
-                      _vm._v(" "),
-                      _c("Button", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.currentMessageType !== "unread",
-                            expression: "currentMessageType !== 'unread'"
-                          }
-                        ],
-                        staticStyle: { float: "right", "margin-right": "20px" },
-                        style: {
-                          display: item.loading ? "inline-block !important" : ""
-                        },
-                        attrs: {
-                          loading: item.loading,
-                          size: "small",
-                          icon:
-                            _vm.currentMessageType === "readed"
-                              ? "md-trash"
-                              : "",
-                          title:
-                            _vm.currentMessageType === "readed" ? "删除" : "",
-                          type: "text"
-                        },
-                        nativeOn: {
-                          click: function($event) {
-                            $event.stopPropagation()
-                            return _vm.removeMsg(item)
-                          }
+            _vm._l(_vm.currentMsgList, function(item, key) {
+              return _c("MenuItem", { key: "" + key, attrs: { name: key } }, [
+                _c(
+                  "div",
+                  [
+                    _c("p", { staticClass: "msg-title" }, [
+                      _vm._v(_vm._s(item.msg.msg))
+                    ]),
+                    _vm._v(" "),
+                    _c("Badge", {
+                      attrs: { status: "default", text: item.created_at }
+                    }),
+                    _vm._v(" "),
+                    _c("Button", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.currentMessageType !== "unread",
+                          expression: "currentMessageType !== 'unread'"
                         }
-                      })
-                    ],
-                    1
-                  )
-                ]
-              )
+                      ],
+                      staticStyle: { float: "right", "margin-right": "20px" },
+                      style: {
+                        display: item.loading ? "inline-block !important" : ""
+                      },
+                      attrs: {
+                        loading: item.loading,
+                        size: "small",
+                        icon:
+                          _vm.currentMessageType === "readed" ? "md-trash" : "",
+                        title:
+                          _vm.currentMessageType === "readed" ? "删除" : "",
+                        type: "text"
+                      },
+                      nativeOn: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          return _vm.removeMsg(key)
+                        }
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
             }),
             1
           )
@@ -358,7 +387,7 @@ render._withStripped = true
 /*!**************************************!*\
   !*** ./resources/js/api/user/msg.js ***!
   \**************************************/
-/*! exports provided: getMessageList, readMsg, delMsg */
+/*! exports provided: getMessageList, readMsg, delMsg, resolveMsg */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -366,6 +395,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMessageList", function() { return getMessageList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "readMsg", function() { return readMsg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "delMsg", function() { return delMsg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resolveMsg", function() { return resolveMsg; });
 /* harmony import */ var _libs_api_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/libs/api.request */ "./resources/js/libs/api.request.js");
 /* harmony import */ var _common_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common/common */ "./resources/js/common/common.js");
 /* harmony import */ var _router_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../router/index */ "./resources/js/router/index.js");
@@ -380,9 +410,35 @@ var getMessageList = function getMessageList() {
   });
 }; // 阅读
 
-var readMsg = function readMsg(id) {}; // 删除 消息
+var readMsg = function readMsg(id) {
+  return _libs_api_request__WEBPACK_IMPORTED_MODULE_0__["default"].request({
+    url: '/api/user/readMsg',
+    method: "POST",
+    data: {
+      id: id
+    }
+  });
+}; // 删除 消息
 
-var delMsg = function delMsg(id) {};
+var delMsg = function delMsg(id) {
+  return _libs_api_request__WEBPACK_IMPORTED_MODULE_0__["default"].request({
+    url: "api/user/delMsg",
+    method: "POST",
+    data: {
+      id: id
+    }
+  });
+}; // 恢复消息
+
+var resolveMsg = function resolveMsg(id) {
+  return _libs_api_request__WEBPACK_IMPORTED_MODULE_0__["default"].request({
+    url: "api/user/resolveMsg",
+    method: "POST",
+    data: {
+      id: id
+    }
+  });
+};
 
 /***/ }),
 

@@ -31,4 +31,6 @@ Route::namespace("Login")->group(function (){
 Route::namespace("User")->prefix("user")->middleware("auth:api")->group(function(){
     Route::get("/getMessageList","UserController@getMessageList");
     Route::get("/getUserInfo","UserController@getUserInfo");
+    Route::post("/readMsg","UserController@readMsg");
+    Route::post("/delMsg","UserController@deleteMsg");
 });

@@ -17,13 +17,13 @@
 
 <script>
 import './user.less'
-import { logout } from "../../../../api/user/login";
+import {getUserInfo, logout} from "../../../../api/user/login";
 
 export default {
   name: 'User',
   data() {
     return{
-      unreadMsg: 11
+      unreadMsg: 0
     }
   },
   methods: {
@@ -45,8 +45,11 @@ export default {
     }
   },
   mounted() {
-    let userInfo = JSON.parse(localStorage.getItem('userInfo'))
-    this.unreadMsg = userInfo.unreadMsg
+    let _this = this
+    getUserInfo().then(function () {
+      let userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      _this.unreadMsg = userInfo.unreadMsg
+    })
   }
 }
 </script>

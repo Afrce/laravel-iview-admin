@@ -9,22 +9,22 @@
           <MenuItem name="readed">
             <span class="category-title">已读消息</span><Badge style="margin-left: 10px" class-name="gray-dadge" :count="messageReadedCount"></Badge>
           </MenuItem>
-          <MenuItem name="trash">
-            <span class="category-title">回收站</span><Badge style="margin-left: 10px" class-name="gray-dadge" :count="messageTrashCount"></Badge>
+          <MenuItem name="deleted">
+            <span class="category-title">回收站</span><Badge style="margin-left: 10px" class-name="gray-dadge" :count="messageDeletedCount"></Badge>
           </MenuItem>
         </Menu>
       </div>
-      <div class="message-page-con message-list-con">
+      <div class="message-page-con message-list-con" style="overflow: auto">
         <Spin fix v-if="listLoading" size="large"></Spin>
         <Menu
           width="auto"
           active-name=""
           @on-select="handleView"
         >
-          <MenuItem v-for="item in messageList" :name="item.msg_id" :key="`msg_${item.msg_id}`">
+          <MenuItem v-for="(item, key) in currentMsgList" :name="key" :key="`${key}`">
             <div>
-              <p class="msg-title">{{ item.title }}</p>
-              <Badge status="default" :text="item.create_time" />
+              <p class="msg-title">{{ item.msg.msg }}</p>
+              <Badge status="default" :text="item.created_at" />
               <Button
                 style="float: right;margin-right: 20px;"
                 :style="{ display: item.loading ? 'inline-block !important' : '' }"
@@ -34,7 +34,7 @@
                 :title="currentMessageType === 'readed' ? '删除' :''"
                 type="text"
                 v-show="currentMessageType !== 'unread'"
-                @click.native.stop="removeMsg(item)"></Button>
+                @click.native.stop="removeMsg(key)"></Button>
             </div>
           </MenuItem>
         </Menu>
@@ -53,6 +53,7 @@
 
 <script>
   import { getMessageList, readMsg, delMsg } from "../../../api/user/msg";
+  import {messageSuccess} from "../../../common/common";
 
   export default {
   name: 'message_page',
@@ -63,46 +64,70 @@
       currentMessageType: 'unread',
       messageContent: '',
       messageList: [],
+      currentMsgList: [],
       showingMsgItem: {},
       messageUnreadCount: 0,
       messageReadedCount: 0,
-      messageTrashCount: 0
+      messageDeletedCount: 0
     }
   },
   computed: {
   },
   methods: {
     handleSelect (name) {
+      this.messageContent = "";
       this.currentMessageType = name
+      this.currentMsgList = this.messageList[name]
     },
-    handleView (msg_id) {
-      this.contentLoading = true
+    handleView (key) {
+      let _this = this;
+      this.messageContent = "";
+      let currentMsg = this.currentMsgList[key]
+      this.messageContent = currentMsg['msg']['url']
+      let msg_id = currentMsg['id']
+      if (this.currentMessageType === 'unread'){
+        this.readMsg(msg_id)
+      }
+    },
+    readMsg(msg_id){
       readMsg(msg_id).then(function (data) {
-        console.log(data)
+        if(data.data.status){
+          _this.getMessageList();
+        }
       }).catch(function () {
-
       })
     },
-    removeMsg (item) {
-      item.loading = true
-      const msg_id = item.msg_id
+    removeMsg (key) {
+      let currentMsg = this.currentMsgList[key]
+      let msg_id = currentMsg['id']
+      console.log(msg_id)
       if (this.currentMessageType === 'readed'){
           delMsg(msg_id).then(function (data) {
-            console.log(data)
+            if(data.data.status){
+              messageSuccess({"title":"删除成功！"})
+            }
           }).catch(function () {
 
           })
       }
+    },
+    getMessageList(){
+      let _this = this;
+      getMessageList().then(function (data) {
+        _this.messageList = data.data.data
+        _this.messageUnreadCount = _this.messageList.unread.length
+        _this.messageReadedCount = _this.messageList.readed.length
+        _this.messageDeletedCount =_this.messageList.deleted.length
+        _this.currentMsgList = _this.messageList.unread
+        _this.listLoading = false
+      })
     }
   },
   mounted () {
     let _this = this
     _this.listLoading = true
     // 请求获取消息列表
-    getMessageList().then(function (data) {
-      console.log(data)
-      _this.listLoading = false
-    })
+    _this.getMessageList();
   }
 }
 </script>
